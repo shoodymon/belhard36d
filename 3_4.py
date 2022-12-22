@@ -22,7 +22,7 @@ else:
 print('Положительных чисел: ', count_of_positive_numbers)
 print('Отрицательных чисел: ', count_of_negative_numbers)
 
-# Решение задачи
+# Решение задачи, где учтем, что при сложении типа bool ответ приведет его в int
 number_1 = int(input('Введите первое число: '))
 number_2 = int(input('Введите второе число: '))
 number_3 = int(input('Введите третье число: '))
