@@ -1,9 +1,6 @@
 # Подсчитать среднее арифметическое N чисел, вводимых с клавиатуры
 
-try:
-    count_of_numbers = int(input('Количество чисел: '))
-except ValueError:
-    print('Вы ввели не число, попробуйте еще раз!')
+count_of_numbers = int(input('Количество чисел: '))
 
 list_of_numbers = []
 for i in range(count_of_numbers):
