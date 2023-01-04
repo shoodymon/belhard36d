@@ -2,6 +2,37 @@
 # функцию для кодирования текстового сообщения в соответствии с кодом Морзе.
 # (словари в помощь)
 
+# ВАРИАНТ 1
+MORZE = {'A': '.-',     'B': '-...',   'C': '-.-.',
+        'D': '-..',    'E': '.',      'F': '..-.',
+        'G': '--.',    'H': '....',   'I': '..',
+        'J': '.---',   'K': '-.-',    'L': '.-..',
+        'M': '--',     'N': '-.',     'O': '---',
+        'P': '.--.',   'Q': '--.-',   'R': '.-.',
+        'S': '...',    'T': '-',      'U': '..-',
+        'V': '...-',   'W': '.--',    'X': '-..-',
+        'Y': '-.--',   'Z': '--..',
+
+        '0': '-----',  '1': '.----',  '2': '..---',
+        '3': '...--',  '4': '....-',  '5': '.....',
+        '6': '-....',  '7': '--...',  '8': '---..',
+        '9': '----.'
+        }
+
+MORZE_REVERSED = {value:key for key,value in MORZE.items()}
+
+def to_morse(string):
+    return ' '.join(MORZE.get(i.upper()) for i in string)
+
+def from_morse(string):
+    return ''.join(MORZE_REVERSED.get(i) for i in string.split())
+
+print(to_morse('hello'))
+
+print(from_morse('.... . .-.. .-.. ---'))
+
+# Вариант 2
+
 morse = {'A': '.-',     'B': '-...',   'C': '-.-.',
         'D': '-..',    'E': '.',      'F': '..-.',
         'G': '--.',    'H': '....',   'I': '..',
@@ -62,32 +93,3 @@ def decode_from_morse(message):
     return decipher
 
 print(decode_from_morse(message='.... . .-.. .-.. ---'))
-
-# ВАРИАНТ 2
-MORZE = {'A': '.-',     'B': '-...',   'C': '-.-.',
-        'D': '-..',    'E': '.',      'F': '..-.',
-        'G': '--.',    'H': '....',   'I': '..',
-        'J': '.---',   'K': '-.-',    'L': '.-..',
-        'M': '--',     'N': '-.',     'O': '---',
-        'P': '.--.',   'Q': '--.-',   'R': '.-.',
-        'S': '...',    'T': '-',      'U': '..-',
-        'V': '...-',   'W': '.--',    'X': '-..-',
-        'Y': '-.--',   'Z': '--..',
-
-        '0': '-----',  '1': '.----',  '2': '..---',
-        '3': '...--',  '4': '....-',  '5': '.....',
-        '6': '-....',  '7': '--...',  '8': '---..',
-        '9': '----.'
-        }
-
-MORZE_REVERSED = {value:key for key,value in MORZE.items()}
-
-def to_morse(string):
-    return ' '.join(MORZE.get(i.upper()) for i in string)
-
-def from_morse(string):
-    return ''.join(MORZE_REVERSED.get(i) for i in string.split())
-
-print(to_morse('hello'))
-
-print(from_morse('.... . .-.. .-.. ---'))
