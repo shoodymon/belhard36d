@@ -9,3 +9,4 @@ def foo(number):
     return list_of_elements
 
 print(foo(3))
+
