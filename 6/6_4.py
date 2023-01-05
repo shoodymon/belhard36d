@@ -12,3 +12,6 @@ def foo(collection):
             print(elements, end= ' ')
 
 foo(collection)
+
+collection = list(filter(lambda elements: isinstance(elements, str), collection))
+print(collection)
